@@ -1,0 +1,15 @@
+.c-caption {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 30px;
+    &-action {
+        display: flex;
+        flex-direction: row;
+        height: 70%;
+    }
+    &-template {
+        width: 200px;
+        height: 300px;
+    }
+}

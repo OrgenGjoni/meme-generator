@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import {Main, Category} from "../containers";
+import {Main, CaptionMeme} from "../containers";
 
 const routes = [
     {path: "/", name: "Main", component: Main},
-    {path: "/category", name: "Category", component: Category},
+    {path: "/caption-selected", name: "CaptionMeme", component: CaptionMeme},
 ];
 
 const router = createRouter({

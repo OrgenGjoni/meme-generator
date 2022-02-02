@@ -1,4 +1,14 @@
 .c-main {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
     min-width: 100vw;
     min-height: 100vh;
+    &-grid {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+    }
 }

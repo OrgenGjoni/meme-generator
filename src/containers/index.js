@@ -1,4 +1,4 @@
 import Main from "./Main/Main";
-import Category from "./Category/Category";
+import CaptionMeme from "./CaptionMeme/CaptionMeme";
 
-export {Main, Category};
+export {Main, CaptionMeme};
