@@ -14,15 +14,12 @@ const get = async ()=>{
 }
 
 const post = async (body)=>{
-    const data = {username: USERNAME, password: PASSWORD, ...body};
-    const formData = new FormData();
-    Object.keys(data).forEach( key => {
-        formData.append(key, data[key]);
-    });
-    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    body.append("username", USERNAME);
+    body.append("password", PASSWORD);
 
+    const config = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } };
     try {
-        const res = await axios.post(`${ENDPOINT}/caption_image`, formData, config);
+        const res = await axios.post(`${ENDPOINT}/caption_image`, body, config);
         return res.data;
     } catch(err){
         console.log(err);

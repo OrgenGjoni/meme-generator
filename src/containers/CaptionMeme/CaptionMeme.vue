@@ -1,11 +1,12 @@
 <template>
-    <div class="c-caption-action">
-        <img :src="imgUrl" class="c-caption-template"/>
-        <form>
-            <input type="text" placeholder="Text #1" v-model="text0"/>
-            <input type="text" placeholder="Text #2" v-model="text1"/>
-            <button type="submit" @click="handleSubmit">Submit</button>
-        </form>
+    <div class="c-caption">
+        <div class="c-caption-action">
+            <img :src="imgUrl" class="c-caption-template"/>
+            <form class="c-caption-form">
+                <input v-for="item in inputsCount" type="text" :placeholder="`Text #${item}`" v-model="text[item]" :key="item"/>
+                <button type="submit" @click="handleSubmit">Submit</button>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -15,22 +16,23 @@
         name: "CaptionMeme",
         data(){
             return{
-                text0: null,
-                text1: null
+                text: []
             }
         },
         computed: {
             ...Vuex.mapGetters(["getSelectedItem","getCaptionRes"]),
             imgUrl(){
                 return this.getCaptionRes ? this.getCaptionRes?.data.url : this.getSelectedItem?.src;
+            },
+            inputsCount(){
+                return this.getSelectedItem && Array.from({length: this.getSelectedItem?.boxCount}, (x, i) => i);
             }
         },
         methods:{
             handleSubmit(e){
                 e.preventDefault();
                 const payload = {
-                    text0: this.text0,
-                    text1: this.text1,
+                    textBoxes: JSON.parse(JSON.stringify(this.text)),
                     template_id: this.getSelectedItem.id
                 };
 
