@@ -1,7 +1,9 @@
 <template>
     <div :class="randomBorderColor" @click="selectItem">
-        <img :src="src" loading="lazy" />
-        <p>{{name}}</p>
+        <div class="c-card-inner">
+            <img :src="src" loading="lazy" />
+            <p>{{name}}</p>
+        </div>
     </div>
 </template>
 

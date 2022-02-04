@@ -1,12 +1,11 @@
 .c-card {
     width: 180px;
     height: 300px;
-    padding: 2px;
+    padding: 4px;
     color: #495057;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
-    border: solid 3px;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -15,16 +14,25 @@
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
     img {
-        width: 100%;
-        height: 250px;
+        max-width: 100%;
+        max-height: 250px;
+        width: auto;
+        height: auto;
+    }
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        background-color: #fff;
     }
 }
 .blue-border {
-    border-color: $happy-blue;
+    background: linear-gradient(0.25turn, $happy-blue 10%, $happy-green, $happy-purple);  
 }
 .green-border {
-    border-color: $happy-green;
+    background: linear-gradient(0.25turn, $happy-green 10%, $happy-purple, $happy-blue);  
 }
 .purple-border {
-    border-color: $happy-purple;
+    background: linear-gradient(0.25turn, $happy-purple 10%, $happy-blue, $happy-green);  
 }
