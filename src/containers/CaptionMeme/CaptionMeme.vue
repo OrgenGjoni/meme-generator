@@ -3,8 +3,8 @@
         <div class="c-caption-action">
             <img :src="imgUrl" class="c-caption-template"/>
             <form class="c-caption-form">
-                <input v-for="item in inputsCount" type="text" :placeholder="`Text #${item}`" v-model="text[item]" :key="item"/>
-                <button type="submit" @click="handleSubmit">Submit</button>
+                <input v-for="item in inputsCount" @input="checkInput" type="text" :placeholder="`Text #${item}`" v-model="text[item]" :key="item"/>
+                <button type="submit" @click="handleSubmit" :disabled="!validBoxes">Submit</button>
             </form>
         </div>
     </div>
@@ -16,11 +16,12 @@
         name: "CaptionMeme",
         data(){
             return{
-                text: []
+                text: [],
+                validBoxes: false
             }
         },
         computed: {
-            ...Vuex.mapGetters(["getSelectedItem","getCaptionRes"]),
+            ...Vuex.mapGetters(["getSelectedItem", "getCaptionRes"]),
             imgUrl(){
                 return this.getCaptionRes ? this.getCaptionRes?.data.url : this.getSelectedItem?.src;
             },
@@ -37,6 +38,9 @@
                 };
 
                 this.$store.commit("captionMeme", payload)
+            },
+            checkInput(e){
+                this.validBoxes = !/^\s*$/.test(e.target.value);
             }
         },
         mounted(){

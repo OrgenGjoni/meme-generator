@@ -6,12 +6,13 @@ const store = createStore({
     return {
       data: [],
       selectedItem: null,
-      captionRes: null
+      captionRes: null,
+      theme: "LIGHT"
     }
   },
   mutations: {
-      increment(state){
-          state.count++;
+      setTheme(state, payload){
+        state.theme = payload;
       },
       setSelectedItem(state, item){
         state.selectedItem = item;
@@ -43,8 +44,8 @@ const store = createStore({
       }
   },
   getters: {
-      getCount(state){
-          return state.count;
+      getTheme(state){
+          return state.theme;
       },
       getData(state){
           return JSON.parse(JSON.stringify(state.data));

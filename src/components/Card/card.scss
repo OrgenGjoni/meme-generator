@@ -2,7 +2,7 @@
     width: 180px;
     height: 300px;
     padding: 4px;
-    color: #495057;
+    color: var(--secondary);
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -24,15 +24,18 @@
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
-        background-color: #fff;
+        background-color: var(--primary);
+        p {
+            padding: 0px 5px;
+        }
     }
 }
 .blue-border {
-    background: linear-gradient(0.25turn, $happy-blue 10%, $happy-green, $happy-purple);  
+    background: linear-gradient(0.25turn, var(--happy-blue) 10%, var(--happy-green), var(--happy-purple));  
 }
 .green-border {
-    background: linear-gradient(0.25turn, $happy-green 10%, $happy-purple, $happy-blue);  
+    background: linear-gradient(0.25turn, var(--happy-green) 10%, var(--happy-purple), var(--happy-blue));  
 }
 .purple-border {
-    background: linear-gradient(0.25turn, $happy-purple 10%, $happy-blue, $happy-green);  
+    background: linear-gradient(0.25turn, var(--happy-purple) 10%, var(--happy-blue), var(--happy-green));  
 }

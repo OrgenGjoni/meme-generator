@@ -4,16 +4,22 @@
     justify-content: center;
     max-width: 100vw;
     max-height: 100vh;
+    height: 100vh;
     padding: 30px;
+    background-color: var(--primary);
     &-action {
         display: flex;
         flex-direction: row;
-        width: 50%;
-        height: 70%;
+        flex-wrap: wrap;
+        width: fit-content;
+        height: fit-content;
         justify-content: center;
         padding: 10px;
         border: solid 3px #8ac926;
         border-radius: 5px;
+        @include breakpoint($md){
+            flex-wrap: nowrap;
+        }
     }
     &-template {
         width: 200px;
@@ -30,30 +36,39 @@
             width: 150px;
             height: 40px;
             margin: 0px auto;
-            background-color: $happy-green;
-            border: solid 2px $happy-green;
+            background-color: var(--happy-green);
+            border: solid 2px var(--happy-green);
             border-radius: 5px;
-            color: #fff;
             font-size: 18px;
+            color: var(--secondary);
             cursor: pointer;
         }
         button:hover {
             font-size: 17px;
             opacity: 0.8;
         }
+        button:disabled {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+        button:disabled:hover {
+            font-size: 18px;
+        }
         input {
             height: 30px;
-            border-color: $happy-green;
-            outline-color: $happy-green;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border-color: var(--happy-green);
+            outline-color: var(--happy-green);
             font-size: 16px;
         }
         input:hover{
             border-radius: 2px;
-            border: solid 2px $happy-blue;
+            border: solid 2px var(--happy-blue);
         }
         input:focus-visible{
             border-radius: 2px;
-            border: solid 2px $happy-blue;
+            border: solid 2px var(--happy-blue);
         }
     }
 }

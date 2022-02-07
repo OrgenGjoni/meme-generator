@@ -15,12 +15,6 @@
         components: {
             Card
         },
-        methods: {
-            increment(){
-                this.$store.commit("increment");
-                console.log(this.getData);
-            }
-        },
         computed: {
             ...Vuex.mapGetters(["getCount", "getData"])
         },

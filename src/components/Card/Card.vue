@@ -1,6 +1,6 @@
 <template>
-    <div :class="randomBorderColor" @click="selectItem">
-        <div class="c-card-inner">
+    <div :class="`${randomBorderColor}`" @click="selectItem">
+        <div :class="`c-card-inner ${getTheme}`">
             <img :src="src" loading="lazy" />
             <p>{{name}}</p>
         </div>
@@ -8,7 +8,6 @@
 </template>
 
 <script>
-
     export default{
         name: "Card",
         props: ["src", "id", "name", "boxCount"],

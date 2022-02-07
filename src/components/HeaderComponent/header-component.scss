@@ -1,0 +1,16 @@
+.c-header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 10px;
+    background-color: var(--primary);
+    &-pic{
+        height: 70px;
+        width: auto;
+    }
+    h2 {
+        font-size: 30px;
+        font-family: 'Rowdies', cursive;
+        color: var(--chill-green);
+    }
+}
