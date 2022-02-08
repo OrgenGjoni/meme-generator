@@ -1,4 +1,5 @@
-# vue_pect
+# Meme Generator
+### My very first VueJS application, it consists in consuming imgflip.com API to create memes
 
 ## Project setup
 ```
