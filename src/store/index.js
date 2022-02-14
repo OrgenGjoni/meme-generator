@@ -36,7 +36,6 @@ const store = createStore({
     
         for (let i = 0; i < boxes.length; i++){
             Object.keys(boxes[i]).forEach(key =>{
-                console.log(boxes[i]);
                 formData.append(`boxes[${i}][${key}]`, boxes[i][key]);
             });
         }
